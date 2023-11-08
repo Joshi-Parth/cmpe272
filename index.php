@@ -87,6 +87,8 @@
 
       <nav id="navbar" class="navbar">
         <ul>
+          <li><a class="nav-link active" href="lfvp.php">Last 5 Visited Products</a></li>
+          <li><a class="nav-link active" href="mvp.php">Most Visited Products</a></li>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Product</a></li>
@@ -240,9 +242,82 @@
     <!-- End Featured Section -->
 
     <!-- End Clients Section -->
+    <?php
+// Define an array of products with their details
+$products = array(
+    array(
+        "name" => "Tennis",
+        "image" => "tennis.jpg",
+    ),
+    array(
+        "name" => "Soccer",
+        "image" => "soccer.jpg",
+    ),
+    array(
+        "name" => "Basketball",
+        "image" => "basketball.jpg",
+    ),
+    array(
+        "name" => "Pickle Ball",
+        "image" => "pickleball.jpg",
+    ),
+    array(
+        "name" => "Table Tennis",
+        "image" => "tabletennis.jpg",
+    ),
+    array(
+        "name" => "Badminton",
+        "image" => "badminton1.jpg",
+    ),
+    array(
+        "name" => "Squash",
+        "image" => "squash.jpg",
+    ),
+    array(
+        "name" => "American Football",
+        "image" => "americanFootball.jpg",
+    ),
+    array(
+        "name" => "Snooker",
+        "image" => "snooker.jpg",
+    ),
+    array(
+        "name" => "Baseball",
+        "image" => "baseball.jpg",
+    ),
+);
+
+?>
+
+<section id="team" class="team">
+    <div class="container">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Sports</h2>
+            <p>We are continuously expanding the number of sports we support!</p>
+        </div>
+        <div class="row">
+            <?php foreach ($products as $product) { ?>
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="zoom-in">
+                      <a href="product.php?product=<?php echo $product['name']; ?>">
+                        <div class="member-img">
+                            <img src="assets/img/team/<?php echo $product['image']; ?>" class="img-fluid" alt="">
+                        </div>
+                        <div class="member-info">
+                            <h4><?php echo $product['name']; ?></h4>
+                        </div>
+                      </a>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
+</section>
+
+
 
     <!-- ======= Team Section ======= -->
-    <section id="team" class="team">
+    <!-- <section id="team" class="team">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -322,7 +397,9 @@
         </div>
 
       </div>
-    </section><!-- End Team Section -->
+    </section> -->
+    
+    <!-- End Team Section -->
 
     
     <!-- <--! End Pricing Section --> 
